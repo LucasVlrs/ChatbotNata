@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nata: Guia do Corpo Humano</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        background-image: url('https://wallpapercave.com/wp/wp2012842.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .chat-container {
+        width: 400px;
+        margin: 20px 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        left: 300px;
+    }
+
+    .chat-header {
+        background-color: #989071;
+        color: #fff;
+        padding: 10px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        text-align: center;
+    }
+
+    .chat-body {
+        padding: 10px;
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    .chat-message {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .chat-message p {
+        margin: 0;
+        padding: 10px;
+        border-radius: 20px;
+        display: inline-block;
+        max-width: 70%;
+    }
+
+    .user-message {
+        background-color: #f7bdbd;
+        float: right;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .bot-message {
+        background-color: #aac7c8;
+        float: left;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+
+    .chat-input {
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .chat-input input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+    }
+
+    .chat-input input[type="submit"] {
+        background-color: #989071;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>Nata: Guia do Corpo Humano</h3>
+        </div>
+        <div class="chat-body" id="chat-body"></div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Mensagem" autofocus onkeypress="handleKeyPress(event)">
+            <input type="submit" value="Enviar" onclick="sendMessage()">
+        </div>
+    </div>
+
+    <script>
+        function appendUserMessage(message) {
+            var chatBody = document.getElementById('chat-body');
+            var userMessage = document.createElement('div');
+            userMessage.classList.add('chat-message');
+            userMessage.classList.add('user-message');
+            userMessage.innerHTML = '<p>' + message + '</p>';
+            chatBody.appendChild(userMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function appendBotMessage(message) {
+            var chatBody = document.getElementById('chat-body');
+            var botMessage = document.createElement('div');
+            botMessage.classList.add('chat-message');
+            botMessage.classList.add('bot-message');
+            botMessage.innerHTML = '<p>' + message + '</p>';
+            chatBody.appendChild(botMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function sendMessage() {
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value.trim();
+
+            if (message !== '') {
+                appendUserMessage(message);
+                messageInput.value = '';
+
+                // Exemplo de requisição usando a biblioteca Fetch API
+                fetch('/resposta', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    appendBotMessage(data.response);
+                })
+                .catch(error => {
+                    console.error('Erro na requisição:', error);
+                });
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>

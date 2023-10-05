@@ -1,0 +1,44 @@
+{
+    "conversas": [
+        {
+            "mensagens": [
+                "quais são os sistemas que compões o corpo humano?",
+                "quais os sistemas que fazem parte do corpo?",
+                "quais os sistemas que tem no corpo humano?"
+            ],
+            "resposta": "Entre os principais sistemas do corpo humano, podemos citar o tegumentar, esquelético, muscular, cardiovascular, respiratório, digestório, urinário, nervoso e genital."
+        },
+        {
+            "mensagens": [
+                "qual o maior osso do corpo humano?",
+                "qual o maior osso?"
+            ],
+            "resposta": "O fêmur é o osso que liga o quadril até o joelho, e é posição líder nesta seleção, dos 10 maiores ossos do corpo humano. Localizado na coxa, o fêmur calcula a média de quase 50.8 cm em comprimento, e é também o osso mais forte do corpo."
+        },
+        {
+            "mensagens": [
+                "quantos músculos existem no corpo humano?",
+                "o ser humano tem quantos músculos?",
+                "tem quantos músculos no corpo?"
+            ],
+            "resposta": "O corpo humano é formado por aproximadamente 600 músculos, que trabalham em conjunto com ossos, articulações e tendões para permitir que façamos diversos movimentos."
+        },
+        {
+            "mensagens": [
+                "quais os principais tipos de tecidos que existem no corpo humano?",
+                "quais os tecidos que tem no ser humano?"
+            ],
+            "resposta": "Os principais tecidos humanos são o tecido epitelial, tecido conjuntivo, tecido muscular e  tecido nervoso."
+        },
+        {
+            "mensagens": [
+                "qual é a função do coração no corpo humano?",
+                "o que o coração faz?",
+                "para que serve o coração na pessoa?",
+                "o coração serve para alguma coisa?",
+                "o coração só serve para sofrer?"
+            ],
+            "resposta": "O coração é um órgão musculoso responsável por impulsionar o sangue pelo corpo. Ele é encontrado entre os dois pulmões e sobre o diafragma, com aproximadamente dois terços de sua massa mais alinhados à esquerda. Esse órgão é revestido por um tecido muscular cardíaco chamado de miocárdio e, internamente, é dividido em quatro câmaras: dois átrios e dois ventrículos."
+        }
+    ]
+}

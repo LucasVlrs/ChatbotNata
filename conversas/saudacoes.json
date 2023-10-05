@@ -1,0 +1,30 @@
+{
+    "conversas": [
+        {
+            "mensagens": [
+                "oi",
+                "olá",
+                "tudo bem?"
+            ],
+            "resposta": "Olá, meu nome é Nata, sou um robô de atendimento que responde perguntas sobre o corpo humano,é só me perguntar algo."
+        },
+        {
+            "mensagens": [
+                "bom dia"
+            ],
+            "resposta": "Bom dia, meu nome é Nata, sou um robô de atendimento que responde perguntas sobre o corpo humano,é só me perguntar algo."
+        },
+        {
+            "mensagens": [
+                "boa tarde"
+            ],
+            "resposta": "Boa tarde, meu nome é Nata, sou um robô de atendimento que responde perguntas sobre o corpo humano,é só me perguntar algo."
+        },
+        {
+            "mensagens": [
+                "boa noite"
+            ],
+            "resposta": "Boa noite, meu nome é Nata, sou um robô de atendimento que responde perguntas sobre o corpo humano,é só me perguntar algo."
+        }
+    ]
+}
